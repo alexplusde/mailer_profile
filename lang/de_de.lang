@@ -1,4 +1,4 @@
 mailer_profile_title: Profile
-
 mailer_profile_table_name_label = Profilname
-mailer_profile_table_name_notice = Notiz, die etwas erklärt und auch einen Beispielwert nennen kann, z.B.: <code>Mein Name</code> 
+
+# Alle weiteren Übersetzungen kommen vom PHPMailer-Addon
