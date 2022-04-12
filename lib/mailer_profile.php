@@ -1,31 +1,31 @@
 <?php
 class mailer_profile extends \rex_yform_manager_dataset
 {
-    public static function epMailerProfile($profile)
+    public static function epMailerProfile($current)
     {
-        self::get($profile);
+        $profile = self::get(1); // TODO: Richtige ID in Abhängig von xyz laden.
 
-        $profile->Timeout = $this->getTimeout();
-        $profile->XMailer = $this->getXMailer();
-        $profile->From = $this->getFrom();
-        $profile->FromName = $this->getFromName();
-        $profile->ConfirmReadingTo = $this->getConfirmReadingTo();
-        $profile->Mailer = $this->getMailer();
-        $profile->Host = $this->getHost();
-        $profile->Port = $this->getPort();
-        $profile->CharSet = $this->getCharset();
-        $profile->WordWrap = $this->getWordWrap();
-        $profile->Encoding = $this->getEncoding();
-        $profile->Priority = $this->getPriority();
-        $profile->SMTPDebug = $this->getSMTPDebug();
-        $profile->SMTPSecure = $this->getSMTPSecure();
-        $profile->SMTPAuth = $this->getSMTPAuth();
-        $profile->SMTPAutoTLS = $this->getSMTPAutoTLS();
-        $profile->Username = $this->getUsername();
-        $profile->Password = $this->getPassword();
-        $profile->archive = $this->getArchive();
+        $current->Timeout = $profile->getTimeout();
+        $current->XMailer = $profile->getXMailer();
+        $current->From = $profile->getFrom();
+        $current->FromName = $profile->getFromName();
+        $current->ConfirmReadingTo = $profile->getConfirmReadingTo();
+        $current->Mailer = $profile->getMailer();
+        $current->Host = $profile->getHost();
+        $current->Port = $profile->getPort();
+        $current->CharSet = $profile->getCharset();
+        $current->WordWrap = $profile->getWordWrap();
+        $current->Encoding = $profile->getEncoding();
+        $current->Priority = $profile->getPriority();
+        $current->SMTPDebug = $profile->getSMTPDebug();
+        $current->SMTPSecure = $profile->getSMTPSecure();
+        $current->SMTPAuth = $profile->getSMTPAuth();
+        $current->SMTPAutoTLS = $profile->getSMTPAutoTLS();
+        $current->Username = $profile->getUsername();
+        $current->Password = $profile->getPassword();
+        $current->archive = $profile->getArchive();
 
-        return $profile;
+        return $current;
     }
 
     public function getName() :string
