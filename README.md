@@ -13,8 +13,6 @@ Nach Installation dieses Addons über den Installer stehen im Backend unter `PHP
 
 * Erstelle ein neues Profil über `+`
 * Trage die gewünschten Informationen ein und bestätige mit Speichern
-
-Eine eigene YForm-Action macht die Nutzung möglich.
 ### Mailer Profile erweitern
 
 > **Hinweis:** Weitere Features wie der Testversand sind noch nicht in Planung. Beteilige dich an der Entwicklung unter https://github.com/alexplusde/mailer_profile/, dann wird dieses Addon vielleicht ein FriendsOfREDAXO-Addon. :)
