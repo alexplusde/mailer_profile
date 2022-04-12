@@ -1,0 +1,42 @@
+package: dummy # Addon-Key, ggf. wie er bei MyREDAXO hinterlegt ist.
+version: '2.0.0-dev' # Aktuelle Version. 
+author: 'Alexander Walther' # Name(n) der Autoren, wird im Installer gezeigt
+supportpage: https://github.com/alexplusde/dummy # Support-Seite, wird im Installer gezeigt
+# load: late 
+
+requires:                       # Abhängigkeiten definieren, z.B.
+#    php:
+#        version: '>7.3,<9'
+#    redaxo: ^5.13              # REDAXO Core-Version
+#    packages:                  # Plugins und Addons
+#        yform: "^4"
+
+
+page:
+    title: translate:dummy_title    # Übersetzung definieren in lang/de_de.lang
+    prio: 100                       # Reihenfolge in Relation zur Prio anderer Menüeinträge 
+    icon: rex-icon fa-gear
+
+pages:
+    dummypage: # key, unter dem die Seite zu finden sein wird. Passende Datei im Addon-Verzeichnis `pages/dummy.dummypage.php` muss vorhanden sein.
+        title: translate:dummy_title
+#        main: true                 
+        block: system               # 'system', um ins Hauptmenü zu verschieben, oder 'dummy', um eigenen Dummy-Abschnitt zu erstellen. Weglassen, um bei den Addons gelistet zu werden 
+        prio: 15                    # Reihenfolge in Abhängigkeit anderer Addons
+        icon: rex-icon fa-calendar  # Icon neben dem Menüpunkt
+        perm: dummy[]               # Berechtigung, die einer Rolle zugewiesen werden kann. z.B. `admin` für Admin, oder `dummy['xyz']` für dein eigenes Addon
+        subpages:                   # Automatisches Untermenü unterhalb des Reisters von `dummypage` erzeugen
+            settings:
+                title: translate:dummy_settings
+                icon: rex-icon fa-gear
+                itemclass: pull-right
+                perm: admin
+            docs:
+                title: translate:dummy_docs
+                subPath: README.md  # Gibt anstelle einer Seite unter `pages` die README.md des Addons aus
+                icon: rex-icon fa-info-circle
+                itemclass: pull-right
+                perm: dummy[docs]
+
+default_config:
+    field: 'Test' # Bei der Installation belegt REDAXO automatisch in der rex_config-Tabelle im Namespace `dummy` im Feld `field` den Wert `Test` 

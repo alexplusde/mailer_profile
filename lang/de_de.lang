@@ -1,0 +1,11 @@
+dummy_title: Dummy-Addon
+
+# FriendsOfREDAXO-Addons können bei YTraduco zur Übersetzung eingereicht werden
+
+# Konfigurationsformulare
+dummy_config_field_label = Test-Feld
+dummy_config_field_notice = Notiz, die etwas erklärt und bspw. einen Standardwert nennt. Hier: <code>Test</code>
+
+# YForm Tablelen-Übersetzung
+dummy_table_name_label = Name
+dummy_table_name_notice = Notiz, die etwas erklärt und auch einen Beispielwert nennen kann, z.B.: <code>Mein Name</code> 
