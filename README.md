@@ -1,56 +1,26 @@
-# Dummy - Dieses Repository kopieren, anpassen, AddOn-Entwicklung für REDAXO starten
+# Mailer Profile für REDAXO 5
 
-Ein REDAXO-Dummy-Addon für einen schnelleren Start bei der Addon-Entwicklung. 
-
-1. https://github.com/alexplusde/dummy/archive/refs/heads/main.zip ZIP der aktuellen Vorlage herunterladen oder direkt in GitHub ein Repo auf Basis von `alexplusde/dummy` erstellen: https://github.com/new/import und dort `https://github.com/alexplusde/dummy.git` angeben.
-2. Mit "Suchen und Ersetzen" alles, was `dummy` heißt, durch den Namen deines Addons ersetzen, z.B. `supi-dupi-kalender`, und speichern. Sowohl Dateinamen, als auch Dateiinhalte. 
-3. Alles löschen, was du aktuell nicht brauchst (oder für später auskommentiert lassen)
-
+Erweitert das Core-Addon `phpmailer` um die Möglichkeit, unterschiedliche Absende-Profile und Postfächer-Konfigurationen vorzunehmen. 
 ## Features
 
-### `package.yml`
+* Lege unterschiedliche Absendeprofile, z.B. mit unterschiedlichen Absendeadressen, Absendenamen und SMTP-Zugangsdaten an.
+* Verwalte und verknüpfe diese Informationen bequem mit YForm
 
-Bei Bedarf Abhängigkeiten von REDAXO-AddOns (sog. packages) eintragen, Backend-Seiten aus oder einblenden, vordefinierte Konfigurationswerte setzen.
+> **Hinweis:** Weitere Features wie der Testversand sind noch nicht in Planung. Beteilige dich an der Entwicklung unter https://github.com/alexplusde/mailer_profile/, dann wird dieses Addon vielleicht ein FriendsOfREDAXO-Addon. :)
+### Installation und Konfiguration
 
-### `boot.php`
+Nach Installation dieses Addons über den Installer stehen im Backend unter `PHPMAiler` > `Profile` eine YForm-Eingabe zur Verfügung.
 
-Gängige Code-Beispiele wie der Syntax zum Überprüfen einer Addon-Installation, der Unterscheidung zwischen Front- und Backend, dem Registrieren eigener YForm-Dataset-Klasen.
+* Erstelle ein neues Profil über `+`
+* Trage die gewünschten Informationen ein und bestätige mit Speichern
 
-### `install.php`
+Eine eigene YForm-Action macht die Nutzung möglich.
+### Mailer Profile erweitern
 
-Gängige Code-Beispiele zum Installieren von YForm-Tablesets, Meta-Infofeldern und dem Verwenden von Extension Points, Cronjobs u.a.
-
-### `dataedit.php` für YForm-Datentabellen
-
-Dein Addon nutzt YForm als Ausgangsbasis? Nutze YForm-Tabellen innerhalb deiner Addon-Seiten via https://friendsofredaxo.github.io/tricks/addons/yform/im-addon
-
-## `update.php`
-
-Gängige Code-Beispiele, die in Abhängigkeit der Vorgänger-Version deines Addons ausgeführt werden.
-
-## `uninstall.php`
-
-Alle Code-Beispiele, die du in der `install.php` nutzt, können hier wieder rückkgängig gemacht werden.
-
-### `lang/`
-
-Blaupause für deine eigene Sprachdatei. Beginne die Addon-Entwicklung direkt so, dass weitere Sprachen ohne Anpassungen ergänzt werden können.
-
-### `fragmente/`
-
-Blaupause für die Nutzung eigener Fragmente.
-
-### Docs-Seite
-
-Passe diese README.md-Datei an und spiele sie als Hilfe-Seite zu deinem Addon aus. Halte dich an die Struktur dieser README.md-Datei für deine eigenen Addons, indem du die wichtigsten Funktionen, Klassen und Methoden sowie den Installationsprozess und die Funktionsweise erklärst. Mit Verweis auf die Autoren, Projekt-Lead und Credits.
-
-### Einstellungs-Seite
-
-Beginne mit einem Konfigurations-Formular, das bereits best practice in REDAXO umsetzt - mit Links zu den wichtigsten API-Docs.
-
+> **Hinweis:** Weitere Features wie der Testversand sind noch nicht in Planung. Beteilige dich an der Entwicklung unter https://github.com/alexplusde/mailer_profile/, dann wird dieses Addon vielleicht ein FriendsOfREDAXO-Addon. :)
 ## Lizenz
 
-MIT Lizenz, siehe [LICENSE.md](https://github.com/alexplusde/dummy/blob/master/LICENSE.md)  
+MIT Lizenz, siehe [LICENSE.md](https://github.com/alexplusde/mailer_profile/blob/master/LICENSE.md)  
 
 ## Autoren
 
@@ -63,4 +33,4 @@ https://github.com/alexplusde
 
 ## Credits
 
-Danke an [Christoph Böcker](https://github.com/christophboecker) für die Basis zur Nutzung von YForm in Addons
+Danke an [Thomas Skerbis](https://github.com/skerbis) für die unfassbar gute Vorarbeit beim REDAXO-Mailer, ohne die es dieses Addon nicht geben würde.
