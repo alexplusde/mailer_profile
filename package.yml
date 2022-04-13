@@ -1,6 +1,6 @@
 package: mailer_profile
-version: '1.0-alpha1' 
-author: 'Alexander Walther' 
+version: '1.0-beta1'
+author: 'Alexander Walther, Stefan Dannfald' 
 supportpage: https://github.com/alexplusde/mailer_profile
 
 requires:

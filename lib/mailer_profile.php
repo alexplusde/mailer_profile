@@ -28,7 +28,7 @@ class mailer_profile extends \rex_yform_manager_dataset
             $mailer->Encoding = $profile->getEncoding();
             $mailer->Priority = $profile->getPriority();
             // $mailer->archive = $profile->getArchive();
-            dump($mailer);
+            # dump($mailer);
         }
     }
 
