@@ -1,5 +1,5 @@
 package: mailer_profile
-version: '0.1-dev' 
+version: '1.0-alpha1' 
 author: 'Alexander Walther' 
 supportpage: https://github.com/alexplusde/mailer_profile
 
@@ -8,13 +8,12 @@ requires:
         version: '>7.3,<9'
     redaxo: ^5.13
     packages:
-        mailer: ^2.11
+        phpmailer: ^2.11
         yform: "^4"
 
 
 page:
-    title: translate:mailer_profile_title
-    icon: rex-icon fa-gear
+    hidden: true
 
 pages:
     phpmailer/profile:

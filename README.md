@@ -15,6 +15,17 @@ Nach Installation dieses Addons über den Installer stehen im Backend unter `PHP
 
 * Erstelle ein neues Profil über `+`
 * Trage die gewünschten Informationen ein und bestätige mit Speichern
+* Verwende die Action `action|mailer_profile|#` mit der gewünschten Profil-ID in deinem YForm-Formular oder verwende den offiziellen EP wie folgt an der passenden Stelle deines Codes:
+
+```
+$profile = mailer_profile::get($profile_id); // Profil-ID anpassen
+if ($profile) {
+    rex_extension::register('PHPMAILER_CONFIG', function (rex_extension_point $ep, $profile) {
+        $subject = $ep->getSubject();
+        mailer_profile::setProfile($subject, $profile);
+    });
+}
+```
 
 ### Mailer Profile erweitern
 

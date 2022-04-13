@@ -1,4 +1,4 @@
-mailer_profile_title: Profile
+mailer_profile_title = Profile
 mailer_profile_table_name_label = Profilname
 
 # Alle weiteren Übersetzungen kommen vom PHPMailer-Addon

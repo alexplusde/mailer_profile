@@ -1,11 +1,8 @@
 <?php
 class mailer_profile extends \rex_yform_manager_dataset
 {
-    public static function epMailerProfile($ep)
+    public static function setProfile($current, $profile)
     {
-        $current = $ep->getSubject();
-        $profile = self::get(1); // TODO: Richtige ID in Abhängig von xyz laden.
-
         $current->Timeout = $profile->getTimeout();
         $current->XMailer = $profile->getXMailer();
         $current->From = $profile->getFrom();

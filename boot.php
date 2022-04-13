@@ -4,6 +4,4 @@ if (rex_addon::get('yform')->isAvailable() && rex_addon::get('phpmailer')->isAva
         'rex_mailer_profile',
         mailer_profile::class
     );
-
-    rex_extension::register('PHPMAILER_CONFIG', ['mailer_profile','epMailerProfile']);
 }
