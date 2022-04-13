@@ -1,38 +1,46 @@
 <?php
 class mailer_profile extends \rex_yform_manager_dataset
 {
-    public static function setProfile($current, $profile)
+    public static function setProfile($ep)
     {
-        $current->Timeout = $profile->getTimeout();
-        $current->XMailer = $profile->getXMailer();
-        $current->From = $profile->getFrom();
-        $current->FromName = $profile->getFromName();
-        $current->ConfirmReadingTo = $profile->getConfirmReadingTo();
-        $current->Mailer = $profile->getMailer();
-        $current->Host = $profile->getHost();
-        $current->Port = $profile->getPort();
-        $current->CharSet = $profile->getCharset();
-        $current->WordWrap = $profile->getWordWrap();
-        $current->Encoding = $profile->getEncoding();
-        $current->Priority = $profile->getPriority();
-        $current->SMTPDebug = $profile->getSMTPDebug();
-        $current->SMTPSecure = $profile->getSMTPSecure();
-        $current->SMTPAuth = $profile->getSMTPAuth();
-        $current->SMTPAutoTLS = $profile->getSMTPAutoTLS();
-        $current->Username = $profile->getUsername();
-        $current->Password = $profile->getPassword();
-        $current->archive = $profile->getArchive();
+        $mailer = $ep->getSubject();
+        $profile = rex_addon::get("mailer_profile")->getConfig("current");
 
-        return $current;
+        if ($profile) {
+            // $mailer->Timeout = $profile->getTimeout();
+            // $mailer->XMailer = $profile->getXMailer();
+            $mailer->From = $profile->getFrom();
+            $mailer->FromName = $profile->getFromName();
+            $mailer->ConfirmReadingTo = $profile->getConfirmReadingTo();
+            $mailer->Mailer = $profile->getMailer();
+            $mailer->Host = $profile->getHost();
+            $mailer->Port = $profile->getPort();
+            $mailer->CharSet = $profile->getCharset();
+            $mailer->WordWrap = $profile->getWordWrap();
+            $mailer->Encoding = $profile->getEncoding();
+            $mailer->Priority = $profile->getPriority();
+            $mailer->SMTPDebug = $profile->getSMTPDebug();
+            $mailer->SMTPSecure = $profile->getSMTPSecure();
+            $mailer->SMTPAuth = $profile->getSMTPAuth();
+            $mailer->SMTPAutoTLS = $profile->getSMTPAutoTLS();
+            $mailer->Username = $profile->getUsername();
+            $mailer->Password = $profile->getPassword();
+            // $mailer->archive = $profile->getArchive();
+            dump($mailer);
+        }
     }
 
     public function getName() :string
     {
         return $this->getValue('name');
     }
+    public function getTimeout() :int
+    {
+        return $this->getValue('timeout');
+    }
     public function getArchive() :string
     {
-        return $this->getValue('name');
+        return $this->getValue('archive');
     }
     public function getFrom()
     {
