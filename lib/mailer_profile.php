@@ -13,18 +13,20 @@ class mailer_profile extends \rex_yform_manager_dataset
             $mailer->FromName = $profile->getFromName();
             $mailer->ConfirmReadingTo = $profile->getConfirmReadingTo();
             $mailer->Mailer = $profile->getMailer();
-            $mailer->Host = $profile->getHost();
-            $mailer->Port = $profile->getPort();
+            if ($profile->getMailer() == "smtp" && $mailer->Username = $profile->getUsername()) {
+                $mailer->Host = $profile->getHost();
+                $mailer->Port = $profile->getPort();
+                $mailer->SMTPDebug = $profile->getSMTPDebug();
+                $mailer->SMTPSecure = $profile->getSMTPSecure();
+                $mailer->SMTPAuth = $profile->getSMTPAuth();
+                $mailer->SMTPAutoTLS = $profile->getSMTPAutoTLS();
+                $mailer->Username = $profile->getUsername();
+                $mailer->Password = $profile->getPassword();
+            }
             $mailer->CharSet = $profile->getCharset();
             $mailer->WordWrap = $profile->getWordWrap();
             $mailer->Encoding = $profile->getEncoding();
             $mailer->Priority = $profile->getPriority();
-            $mailer->SMTPDebug = $profile->getSMTPDebug();
-            $mailer->SMTPSecure = $profile->getSMTPSecure();
-            $mailer->SMTPAuth = $profile->getSMTPAuth();
-            $mailer->SMTPAutoTLS = $profile->getSMTPAutoTLS();
-            $mailer->Username = $profile->getUsername();
-            $mailer->Password = $profile->getPassword();
             // $mailer->archive = $profile->getArchive();
             dump($mailer);
         }
