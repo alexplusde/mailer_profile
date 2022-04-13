@@ -15,7 +15,7 @@ Nach Installation dieses Addons über den Installer stehen im Backend unter `PHP
 
 * Erstelle ein neues Profil über `+`
 * Trage die gewünschten Informationen ein und bestätige mit Speichern
-* Verwende die Action `action|mailer_profile|#` mit der gewünschten Profil-ID in deinem YForm-Formular oder verwende den offiziellen EP wie folgt an der passenden Stelle deines Codes:
+* Verwende die Action `action|mailer_profile|#` vor deiner E-Mail-Action (z.B. `tpl2email`) mit der gewünschten Profil-ID in deinem YForm-Formular oder verwende den offiziellen EP wie folgt an der passenden Stelle deines Codes:
 
 ```
 $profile = mailer_profile::get($profile_id); // Profil-ID anpassen
@@ -26,6 +26,12 @@ if ($profile) {
     });
 }
 ```
+
+> **Hinweis:** Angaben in YForm E-Mail-Templates (Absender/Empfänger) gewinnen gegenüber den Einstellungen in Mailer Profile.
+
+> **Tipp** Verwende die Action `mailer_profile` mehrfach zwischen unterschiedlichen E-Mail-Actions (z.B. `tpl2email`), wenn verschiedene Konfigurationen pro E-Mail-Action benötigt werden.
+
+> **Tipp** Wird SMTP ausgewählt, jedoch kein Nutzername angegeben, so werden die Einstellungen von der Hauptkonfiguration in PHPMailer übernommen.
 
 ### Mailer Profile erweitern
 
