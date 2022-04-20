@@ -2,3 +2,6 @@ mailer_profile_title = Profile
 mailer_profile_table_name_label = Profilname
 
 # Alle weiteren Übersetzungen kommen vom PHPMailer-Addon
+
+mailer_profile_info_donate = Anders als die meisten Addons aus der REDAXO-Community ist die Entstehung und Weiterentwicklung dieses Addons nicht durch eigene Projekte gedeckt. Mit einer Spende oder einer Beauftragung sicherst du zusätzliche Features, die Stabilität, Funktionsumfang und Weiterentwicklung weiter verbessern können, sowie eine bessere Anleitung. 
+mailer_profile_donate = Weiterentwicklung unterstützen 
