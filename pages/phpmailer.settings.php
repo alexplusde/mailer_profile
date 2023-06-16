@@ -12,7 +12,7 @@ $fragment = new rex_fragment();
 $fragment->setVar('class', 'info', false);
 $fragment->setVar('title', $this->i18n('mailer_profile_donate'), false);
 $fragment->setVar('body', '<p>' . $this->i18n('mailer_profile_info_donate') . '</p>' . $anchor, false);
-echo !rex_config::get("alexplusde", "donated") ? $fragment->parse('core/page/section.php') : "";
+echo !rex_config::get('alexplusde', 'donated') ? $fragment->parse('core/page/section.php') : '';
 ?>
     </div>
 </div>
