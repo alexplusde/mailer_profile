@@ -1,4 +1,5 @@
 <?php
+
 $addon = rex_addon::get('mailer_profile');
 
 if (rex_addon::get('yform')->isAvailable() && !rex::isSafeMode()) {

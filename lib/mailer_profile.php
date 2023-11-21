@@ -1,10 +1,11 @@
 <?php
+
 class mailer_profile extends \rex_yform_manager_dataset
 {
-    public static function setProfile(rex_extension_point $ep) :void
+    public static function setProfile(rex_extension_point $ep): void
     {
         $mailer = $ep->getSubject();
-        $profile = rex_addon::get("mailer_profile")->getConfig("current");
+        $profile = rex_addon::get('mailer_profile')->getConfig('current');
 
         if ($profile) {
             // $mailer->Timeout = $profile->getTimeout();
@@ -13,7 +14,7 @@ class mailer_profile extends \rex_yform_manager_dataset
             $mailer->FromName = $profile->getFromName();
             $mailer->ConfirmReadingTo = $profile->getConfirmReadingTo();
             $mailer->Mailer = $profile->getMailer();
-            if ($profile->getMailer() == "smtp" && $mailer->Username = $profile->getUsername()) {
+            if ('smtp' == $profile->getMailer() && $mailer->Username = $profile->getUsername()) {
                 $mailer->Host = $profile->getHost();
                 $mailer->Port = $profile->getPort();
                 $mailer->SMTPDebug = $profile->getSMTPDebug();
@@ -28,22 +29,25 @@ class mailer_profile extends \rex_yform_manager_dataset
             $mailer->Encoding = $profile->getEncoding();
             $mailer->Priority = $profile->getPriority();
             // $mailer->archive = $profile->getArchive();
-            # dump($mailer);
+            // dump($mailer);
         }
     }
 
-    public function getName() :string
+    public function getName(): string
     {
         return $this->getValue('name');
     }
-    public function getTimeout() :int
+
+    public function getTimeout(): int
     {
         return $this->getValue('timeout');
     }
-    public function getArchive() :string
+
+    public function getArchive(): string
     {
         return $this->getValue('archive');
     }
+
     public function getFrom(): string
     {
         return $this->getValue('from');
@@ -68,6 +72,7 @@ class mailer_profile extends \rex_yform_manager_dataset
     {
         return $this->getValue('host');
     }
+
     public function getPort(): int
     {
         return $this->getValue('port');
@@ -97,7 +102,7 @@ class mailer_profile extends \rex_yform_manager_dataset
     {
         return $this->getValue('smtpsecure');
     }
-    
+
     public function getSMTPAuth(): bool
     {
         return $this->getValue('smtpauth');

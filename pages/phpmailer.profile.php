@@ -9,15 +9,14 @@ $table_name = 'rex_mailer_profile';
 
 \rex_extension::register(
     'YFORM_MANAGER_DATA_PAGE_HEADER',
-    function (\rex_extension_point $ep) {
+    static function (rex_extension_point $ep) {
         if ($ep->getParam('yform')->table->getTableName() === $ep->getParam('table_name')) {
             return '';
         }
     },
     \rex_extension::EARLY,
-    ['table_name'=>$table_name]
+    ['table_name' => $table_name],
 );
-
 
 $_REQUEST['table_name'] = $table_name;
 
