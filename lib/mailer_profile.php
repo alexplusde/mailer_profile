@@ -2,7 +2,7 @@
 
 class mailer_profile extends \rex_yform_manager_dataset
 {
-    public static function setProfile($ep)
+    public static function setProfile(rex_extension_point $ep): void
     {
         $mailer = $ep->getSubject();
         $profile = rex_addon::get('mailer_profile')->getConfig('current');
@@ -48,82 +48,82 @@ class mailer_profile extends \rex_yform_manager_dataset
         return $this->getValue('archive');
     }
 
-    public function getFrom()
+    public function getFrom(): string
     {
         return $this->getValue('from');
     }
 
-    public function getFromName()
+    public function getFromName(): string
     {
         return $this->getValue('fromname');
     }
 
-    public function getConfirmReadingTo()
+    public function getConfirmReadingTo(): string
     {
         return $this->getValue('confirmto');
     }
 
-    public function getMailer()
+    public function getMailer(): string
     {
         return $this->getValue('mailer');
     }
 
-    public function getHost()
+    public function getHost(): string
     {
         return $this->getValue('host');
     }
 
-    public function getPort()
+    public function getPort(): int
     {
         return $this->getValue('port');
     }
 
-    public function getCharSet()
+    public function getCharSet(): string
     {
         return $this->getValue('charset');
     }
 
-    public function getWordWrap()
+    public function getWordWrap(): int
     {
         return $this->getValue('wordwrap');
     }
 
-    public function getEncoding()
+    public function getEncoding(): string
     {
         return $this->getValue('encoding');
     }
 
-    public function getSMTPDebug()
+    public function getSMTPDebug(): bool
     {
         return $this->getValue('smtp_debug');
     }
 
-    public function getSMTPSecure()
+    public function getSMTPSecure(): string
     {
         return $this->getValue('smtpsecure');
     }
 
-    public function getSMTPAuth()
+    public function getSMTPAuth(): bool
     {
         return $this->getValue('smtpauth');
     }
 
-    public function getSMTPAutoTLS()
+    public function getSMTPAutoTLS(): bool
     {
         return $this->getValue('security_mode');
     }
 
-    public function getUsername()
+    public function getUsername(): string
     {
         return $this->getValue('username');
     }
 
-    public function getPassword()
+    public function getPassword(): string
     {
         return $this->getValue('password');
     }
 
-    public function getPriority()
+    public function getPriority(): ?int
     {
         if (0 == $this->getValue('priority')) {
             return null;

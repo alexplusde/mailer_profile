@@ -1,6 +1,8 @@
 <?php
 
-$yform = $this->getProperty('yform', []);
+$addon = rex_addon::get('mailer_profile');
+
+$yform = $addon->getProperty('yform', []);
 $yform = $yform[\rex_be_controller::getCurrentPage()] ?? [];
 
 $table_name = 'rex_mailer_profile';
