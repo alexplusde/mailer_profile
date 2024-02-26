@@ -1,6 +1,6 @@
 <?php
 
-class mailer_profile extends \rex_yform_manager_dataset
+class mailer_profile extends rex_yform_manager_dataset
 {
     public static function setProfile(rex_extension_point $ep): void
     {
