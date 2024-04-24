@@ -3,6 +3,6 @@ mailer_profile_table_name_label = Profilname
 
 # Alle weiteren Übersetzungen kommen vom PHPMailer-Addon
 mailer_profile_header = Mail-Header
-mailer_profile_header_notice = Hier können Sie den Mail-Header anpassen. Dieser wird vor dem eigentlichen Mail-Text eingefügt.
+mailer_profile_header_notice = Hier können Sie zusätzliche Header für die E-Mail hinzufügen. Jeder Header muss in einer eigenen Zeile stehen. Beispiel: X-My-Header: Wert
 mailer_profile_header_key = Schlüssel
 mailer_profile_header_value = Wert

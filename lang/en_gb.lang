@@ -5,4 +5,9 @@ mailer_profile_table_name_label = Profilname
 # Alle weiteren Übersetzungen kommen vom PHPMailer-Addon
 
 mailer_profile_info_donate = Anders als die meisten Addons aus der REDAXO-Community ist die Entstehung und Weiterentwicklung dieses Addons nicht durch eigene Projekte gedeckt. mit einer einer Beauftragung sicherst du zusätzliche Features, die Stabilität, Funktionsumfang und Weiterentwicklung weiter verbessern können, sowie eine bessere Anleitung. 
-mailer_profile_donate = Weiterentwicklung unterstützen 
+mailer_profile_donate = Weiterentwicklung unterstützen
+
+mailer_profile_header = Mail-Header
+mailer_profile_header_notice = Hier können Sie zusätzliche Header für die E-Mail hinzufügen. Jeder Header muss in einer eigenen Zeile stehen. Beispiel: X-My-Header: Wert
+mailer_profile_header_key = Key
+mailer_profile_header_value = Value
