@@ -130,4 +130,12 @@ class mailer_profile extends rex_yform_manager_dataset
         }
         return $this->getValue('priority');
     }
+
+    public function getHeader(): array
+    {
+        if(!$this->getValue('header')) {
+            return null;
+        }
+        return json_decode($this->getValue('header'), true);
+    }
 }
