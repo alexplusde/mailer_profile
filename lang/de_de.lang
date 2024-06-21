@@ -1,4 +1,5 @@
 mailer_profile_title = Profile
 mailer_profile_table_name_label = Profilname
+mailer_profile_returnto_email = Bounces (Return-Path) an
 
 # Alle weiteren Übersetzungen kommen vom PHPMailer-Addon
