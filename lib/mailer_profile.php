@@ -13,6 +13,7 @@ class mailer_profile extends rex_yform_manager_dataset
             $mailer->From = $profile->getFrom();
             $mailer->FromName = $profile->getFromName();
             $mailer->ConfirmReadingTo = $profile->getConfirmReadingTo();
+            $mailer->Sender = $profile->getReturnto();
             $mailer->Mailer = $profile->getMailer();
             if ('smtp' == $profile->getMailer() && $mailer->Username = $profile->getUsername()) {
                 $mailer->Host = $profile->getHost();
@@ -61,6 +62,11 @@ class mailer_profile extends rex_yform_manager_dataset
     public function getConfirmReadingTo(): string
     {
         return $this->getValue('confirmto');
+    }
+
+    public function getReturnto(): string
+    {
+        return $this->getValue('returnto');
     }
 
     public function getMailer(): string
