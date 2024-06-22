@@ -5,6 +5,7 @@ mailer_profile_table = 📬 Mailer-Profile
 
 # All further translations come from the PHPMailer addon
 
+mailer_profile_returnto_email = Bounces (Return-Path) to
 mailer_profile_header = Additional (X-)Headers
 mailer_profile_header_key = Key
 mailer_profile_header_value = Value

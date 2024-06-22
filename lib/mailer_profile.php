@@ -13,6 +13,7 @@ class mailer_profile extends rex_yform_manager_dataset
             $mailer->From = $profile->getFrom();
             $mailer->FromName = $profile->getFromName();
             $mailer->ConfirmReadingTo = $profile->getConfirmReadingTo();
+            $mailer->Sender = $profile->getReturnto();
             $mailer->Mailer = $profile->getMailer();
             if ('smtp' == $profile->getMailer() && $mailer->Username = $profile->getUsername()) {
                 $mailer->Host = $profile->getHost();
@@ -132,10 +133,17 @@ class mailer_profile extends rex_yform_manager_dataset
             
     /* Verschlüsselung */
     /** @api */
-    public function getSecurityMode() : ?string
+    public function getSecurityMode() : ?string    
     {
         return $this->getValue("security_mode");
     }
+  
+    public function getReturnto(): string
+    {
+        return $this->getValue('returnto');
+    }
+
+    public function getMailer(): string
     /** @api */
     public function setSecurityMode(mixed $value) : self
     {

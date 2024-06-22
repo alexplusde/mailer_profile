@@ -141,6 +141,7 @@
                 "no_db": "0",
                 "notice": ""
             },
+            {"table_name":"rex_mailer_profile","prio":9,"type_id":"value","type_name":"email","db_type":"varchar(191)","list_hidden":0,"search":0,"name":"returnto","label":"translate:mailer_profile_returnto_email","not_required":"","default":"","no_db":"0","attributes":"{\"placeholder\":\"returnto@example.tld\"}","notice":""},
             {
                 "table_name": "rex_mailer_profile",
                 "prio": 9,
