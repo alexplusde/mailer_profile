@@ -3,7 +3,7 @@
         "table": {
             "status": 1,
             "table_name": "rex_mailer_profile",
-            "name": "translate:mailer_profile",
+            "name": "translate:mailer_profile_table",
             "description": "",
             "list_amount": 50,
             "list_sortfield": "fromname",
@@ -21,7 +21,8 @@
             "createuser": "",
             "updateuser": ""
         },
-        "fields": [{
+        "fields": [
+            {
                 "table_name": "rex_mailer_profile",
                 "prio": 1,
                 "type_id": "value",

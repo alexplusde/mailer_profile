@@ -24,6 +24,11 @@ class mailer_profile extends rex_yform_manager_dataset
                 $mailer->Username = $profile->getUsername();
                 $mailer->Password = $profile->getPassword();
             }
+            if($profile->getHeader()) {
+                foreach($profile->getHeader() as $key => $value) {
+                    $mailer->addCustomHeader($key, $value);
+                }
+            }
             $mailer->CharSet = $profile->getCharset();
             $mailer->WordWrap = $profile->getWordWrap();
             $mailer->Encoding = $profile->getEncoding();
@@ -33,101 +38,267 @@ class mailer_profile extends rex_yform_manager_dataset
         }
     }
 
-    public function getName(): string
+
+    /* Absendername */
+    /** @api */
+    public function getFromname() : ?string
     {
-        return $this->getValue('name');
+        return $this->getValue("fromname");
+    }
+    /** @api */
+    public function setFromname(mixed $value) : self
+    {
+        $this->setValue("fromname", $value);
+        return $this;
     }
 
-    public function getTimeout(): int
+    /* Absenderadresse */
+    /** @api */
+    public function getFrom() : ?string
     {
-        return $this->getValue('timeout');
+        return $this->getValue("from");
+    }
+    /** @api */
+    public function setFrom(mixed $value) : self
+    {
+        $this->setValue("from", $value);
+        return $this;
     }
 
-    public function getArchive(): string
+    /* Lesebestätigung an */
+    /** @api */
+    public function getConfirmto() : ?string
     {
-        return $this->getValue('archive');
+        return $this->getValue("confirmto");
+    }
+    /** @api */
+    public function setConfirmto(mixed $value) : self
+    {
+        $this->setValue("confirmto", $value);
+        return $this;
     }
 
-    public function getFrom(): string
+    /* Blindkopie(BCC) an */
+    /** @api */
+    public function getBcc() : ?string
     {
-        return $this->getValue('from');
+        return $this->getValue("bcc");
+    }
+    /** @api */
+    public function setBcc(mixed $value) : self
+    {
+        $this->setValue("bcc", $value);
+        return $this;
     }
 
-    public function getFromName(): string
+    /* Mailer-Typ */
+    /** @api */
+    public function getMailer() : ?string
     {
-        return $this->getValue('fromname');
+        return $this->getValue("mailer");
+    }
+    /** @api */
+    public function setMailer(mixed $value) : self
+    {
+        $this->setValue("mailer", $value);
+        return $this;
     }
 
-    public function getConfirmReadingTo(): string
+    /* Host */
+    /** @api */
+    public function getHost() : ?string
     {
-        return $this->getValue('confirmto');
+        return $this->getValue("host");
+    }
+    /** @api */
+    public function setHost(mixed $value) : self
+    {
+        $this->setValue("host", $value);
+        return $this;
     }
 
-    public function getMailer(): string
+    /* Port */
+    /** @api */
+    public function getPort() : ?float
     {
-        return $this->getValue('mailer');
+        return $this->getValue("port");
+    }
+    /** @api */
+    public function setPort(float $value) : self
+    {
+        $this->setValue("port", $value);
+        return $this;
+    }
+            
+    /* Verschlüsselung */
+    /** @api */
+    public function getSecurityMode() : ?string
+    {
+        return $this->getValue("security_mode");
+    }
+    /** @api */
+    public function setSecurityMode(mixed $value) : self
+    {
+        $this->setValue("security_mode", $value);
+        return $this;
     }
 
-    public function getHost(): string
+    /* Verschlüsselungstyp */
+    /** @api */
+    public function getSmtpsecure() : ?string
     {
-        return $this->getValue('host');
+        return $this->getValue("smtpsecure");
+    }
+    /** @api */
+    public function setSmtpsecure(mixed $value) : self
+    {
+        $this->setValue("smtpsecure", $value);
+        return $this;
     }
 
-    public function getPort(): int
+    /* Authentifizierung */
+    /** @api */
+    public function getSmtpauth() : ?string
     {
-        return $this->getValue('port');
+        return $this->getValue("smtpauth");
+    }
+    /** @api */
+    public function setSmtpauth(mixed $value) : self
+    {
+        $this->setValue("smtpauth", $value);
+        return $this;
     }
 
-    public function getCharSet(): string
+    /* Benutzername */
+    /** @api */
+    public function getUsername() : ?string
     {
-        return $this->getValue('charset');
+        return $this->getValue("username");
+    }
+    /** @api */
+    public function setUsername(mixed $value) : self
+    {
+        $this->setValue("username", $value);
+        return $this;
     }
 
-    public function getWordWrap(): int
+    /* Passwort */
+    /** @api */
+    public function getPassword() : ?string
     {
-        return $this->getValue('wordwrap');
+        return $this->getValue("password");
+    }
+    /** @api */
+    public function setPassword(mixed $value) : self
+    {
+        $this->setValue("password", $value);
+        return $this;
     }
 
-    public function getEncoding(): string
+    /* Zeichensatz */
+    /** @api */
+    public function getCharset() : ?string
     {
-        return $this->getValue('encoding');
+        return $this->getValue("charset");
+    }
+    /** @api */
+    public function setCharset(mixed $value) : self
+    {
+        $this->setValue("charset", $value);
+        return $this;
     }
 
-    public function getSMTPDebug(): bool
+    /* Zeilenumbruch */
+    /** @api */
+    public function getWordwrap() : ?float
     {
-        return $this->getValue('smtp_debug');
+        return $this->getValue("wordwrap");
+    }
+    /** @api */
+    public function setWordwrap(float $value) : self
+    {
+        $this->setValue("wordwrap", $value);
+        return $this;
+    }
+            
+    /* Kodierung */
+    /** @api */
+    public function getEncoding() : ?string
+    {
+        return $this->getValue("encoding");
+    }
+    /** @api */
+    public function setEncoding(mixed $value) : self
+    {
+        $this->setValue("encoding", $value);
+        return $this;
     }
 
-    public function getSMTPSecure(): string
+    /* Priorität */
+    /** @api */
+    public function getPriority() : ?string
     {
-        return $this->getValue('smtpsecure');
+        return $this->getValue("priority");
+    }
+    /** @api */
+    public function setPriority(mixed $value) : self
+    {
+        $this->setValue("priority", $value);
+        return $this;
     }
 
-    public function getSMTPAuth(): bool
+    /* Debug */
+    /** @api */
+    public function getSmtpDebug() : ?string
     {
-        return $this->getValue('smtpauth');
+        return $this->getValue("smtp_debug");
+    }
+    /** @api */
+    public function setSmtpDebug(mixed $value) : self
+    {
+        $this->setValue("smtp_debug", $value);
+        return $this;
     }
 
-    public function getSMTPAutoTLS(): bool
+    /* E-Mail-Log */
+    /** @api */
+    public function getLogging() : ?string
     {
-        return $this->getValue('security_mode');
+        return $this->getValue("logging");
+    }
+    /** @api */
+    public function setLogging(mixed $value) : self
+    {
+        $this->setValue("logging", $value);
+        return $this;
     }
 
-    public function getUsername(): string
+    /* E-Mail-Archivierung */
+    /** @api */
+    public function getArchive() : ?string
     {
-        return $this->getValue('username');
+        return $this->getValue("archive");
+    }
+    /** @api */
+    public function setArchive(mixed $value) : self
+    {
+        $this->setValue("archive", $value);
+        return $this;
     }
 
-    public function getPassword(): string
+    /* Zusätzliche (X-)Header */
+    /** @api */
+    public function getHeader() : ?array
     {
-        return $this->getValue('password');
+        return json_decode($this->getValue("header"), true);
     }
-
-    public function getPriority(): ?int
+    /** @api */
+    public function setHeader(array|string $value) : self
     {
-        if (0 == $this->getValue('priority')) {
-            return null;
+        if(is_array($value)) {
+            $value = json_encode($value, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK | JSON_PRESERVE_ZERO_FRACTION | JSON_PRETTY_PRINT | JSON_UNESCAPED_LINE_TERMINATORS | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR);
         }
-        return $this->getValue('priority');
+        $this->setValue("header", $value);
+        return $this;
     }
 }

@@ -1,4 +1,11 @@
 mailer_profile_title = Profile
 mailer_profile_table_name_label = Profilname
 
-# Alle weiteren Übersetzungen kommen vom PHPMailer-Addon
+mailer_profile_table = 📬 Mailer-Profile
+
+# Die meisten Übersetzungen kommen direkt vom PHPMailer-Addon
+
+mailer_profile_header = Zusätzliche (X-)Header
+mailer_profile_header_key = Schlüssel
+mailer_profile_header_value = Wert
+mailer_profile_header_notice = (optional) weitere (X-)Header werden in die Mail eingefügt, z.B. `X-Abuse-Reports-To:` 
