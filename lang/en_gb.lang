@@ -1,9 +1,12 @@
 mailer_profile = Profile
 mailer_profile_title = Profile
-mailer_profile_table_name_label = Profilname
+
+mailer_profile_table = 📬 Mailer-Profile
+
+# All further translations come from the PHPMailer addon
+
 mailer_profile_returnto_email = Bounces (Return-Path) to
-
-# Alle weiteren Übersetzungen kommen vom PHPMailer-Addon
-
-mailer_profile_info_donate = Anders als die meisten Addons aus der REDAXO-Community ist die Entstehung und Weiterentwicklung dieses Addons nicht durch eigene Projekte gedeckt. mit einer einer Beauftragung sicherst du zusätzliche Features, die Stabilität, Funktionsumfang und Weiterentwicklung weiter verbessern können, sowie eine bessere Anleitung.
-mailer_profile_donate = Weiterentwicklung unterstützen
+mailer_profile_header = Additional (X-)Headers
+mailer_profile_header_key = Key
+mailer_profile_header_value = Value
+mailer_profile_header_notice = (optional) additional (X-)Headers are inserted into the mail, e.g., `X-Abuse-Reports-To:`
