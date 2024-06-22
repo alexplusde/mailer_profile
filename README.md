@@ -1,15 +1,17 @@
 # Mailer Profile für REDAXO 5
 
-Erweitert das Core-Addon `phpmailer` um die Möglichkeit, unterschiedliche Absende-Profile und Postfächer-Konfigurationen vorzunehmen. 
+Erweitert das Core-Addon `phpmailer` um die Möglichkeit, unterschiedliche Absende-Profile und Postfächer-Konfigurationen vorzunehmen.
 
 ![image](https://github.com/alexplusde/mailer_profile/assets/3855487/5fc79c3d-ef02-4e06-bf40-377287f2e3d6)
 
 ## Features
 
 * Lege unterschiedliche Absendeprofile, z.B. mit unterschiedlichen Absendeadressen, Absendenamen und SMTP-Zugangsdaten an.
+* Action `mailer_profile` für deine YForm-Formulare
 * Verwalte und verknüpfe diese Informationen bequem mit YForm
+* Zusätzliche Optionen gegenüber dem Core-Addon: Füge X-Header und den Return-Path für Bounces hinzu.
 
-> **Hinweis:** Weitere Features wie der Testversand sind noch nicht in Planung. Beteilige dich an der Entwicklung unter https://github.com/alexplusde/mailer_profile/, dann wird dieses Addon vielleicht ein FriendsOfREDAXO-Addon. :)
+> **Hinweis:** Weitere Features wie der Testversand sind noch nicht in Planung. Beteilige dich an der Entwicklung unter <https://github.com/alexplusde/mailer_profile/>, dann wird dieses Addon vielleicht ein FriendsOfREDAXO-Addon. `:)`
 
 ### Installation und Konfiguration
 
@@ -19,7 +21,7 @@ Nach Installation dieses Addons über den Installer stehen im Backend unter `PHP
 * Trage die gewünschten Informationen ein und bestätige mit Speichern
 * Verwende die Action `action|mailer_profile|#` vor deiner E-Mail-Action (z.B. `tpl2email`) mit der gewünschten Profil-ID in deinem YForm-Formular oder verwende den offiziellen EP wie folgt an der passenden Stelle deines Codes:
 
-```
+```php
 $profile = mailer_profile::get($profile_id); // Profil-ID anpassen
 if ($profile) {
     rex_extension::register('PHPMAILER_CONFIG', function (rex_extension_point $ep, $profile) {
@@ -37,7 +39,7 @@ if ($profile) {
 
 ### Mailer Profile erweitern
 
-> **Hinweis:** Weitere Features wie der Testversand sind noch nicht in Planung. Beteilige dich an der Entwicklung unter https://github.com/alexplusde/mailer_profile/, dann wird dieses Addon vielleicht ein FriendsOfREDAXO-Addon. :)
+> **Hinweis:** Weitere Features wie der Testversand sind noch nicht in Planung. Beteilige dich an der Entwicklung unter <https://github.com/alexplusde/mailer_profile/>, dann wird dieses Addon vielleicht ein FriendsOfREDAXO-Addon. `:)`
 
 ## Lizenz
 
@@ -47,8 +49,8 @@ MIT Lizenz, siehe [LICENSE.md](https://github.com/alexplusde/mailer_profile/blob
 
 **Alexander Walther**  
 
-* http://www.alexplus.de  
-* https://github.com/alexplusde  
+* <http://www.alexplus.de>  
+* <https://github.com/alexplusde>  
 
 **Projekt-Lead**  
 [Alexander Walther](https://github.com/alexplusde)
