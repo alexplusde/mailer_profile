@@ -143,8 +143,6 @@ class mailer_profile extends rex_yform_manager_dataset
         return $this->getValue('returnto');
     }
 
-    public function getMailer(): string
-    /** @api */
     public function setSecurityMode(mixed $value) : self
     {
         $this->setValue("security_mode", $value);
@@ -308,13 +306,5 @@ class mailer_profile extends rex_yform_manager_dataset
         }
         $this->setValue("header", $value);
         return $this;
-    }
-
-    public function getHeader(): array
-    {
-        if(!$this->getValue('header')) {
-            return null;
-        }
-        return json_decode($this->getValue('header'), true);
     }
 }

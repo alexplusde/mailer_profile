@@ -141,7 +141,6 @@
                 "no_db": "0",
                 "notice": ""
             },
-            {"table_name":"rex_mailer_profile","prio":9,"type_id":"value","type_name":"email","db_type":"varchar(191)","list_hidden":0,"search":0,"name":"returnto","label":"translate:mailer_profile_returnto_email","not_required":"","default":"","no_db":"0","attributes":"{\"placeholder\":\"returnto@example.tld\"}","notice":""},
             {
                 "table_name": "rex_mailer_profile",
                 "prio": 9,
@@ -171,6 +170,22 @@
                 "table_name": "rex_mailer_profile",
                 "prio": 10,
                 "type_id": "value",
+                "type_name": "email",
+                "db_type": "varchar(191)",
+                "list_hidden": 0,
+                "search": 0,
+                "name": "returnto",
+                "label": "translate:mailer_profile_returnto_email",
+                "not_required": "",
+                "attributes": "{\"placeholder\":\"returnto@example.tld\"}",
+                "default": "",
+                "no_db": "0",
+                "notice": ""
+            },
+            {
+                "table_name": "rex_mailer_profile",
+                "prio": 11,
+                "type_id": "value",
                 "type_name": "fieldset",
                 "db_type": "none",
                 "list_hidden": 0,
@@ -183,7 +198,7 @@
             },
             {
                 "table_name": "rex_mailer_profile",
-                "prio": 11,
+                "prio": 12,
                 "type_id": "value",
                 "type_name": "text",
                 "db_type": "varchar(191)",
@@ -201,7 +216,7 @@
             },
             {
                 "table_name": "rex_mailer_profile",
-                "prio": 12,
+                "prio": 13,
                 "type_id": "value",
                 "type_name": "number",
                 "db_type": "",
@@ -221,7 +236,7 @@
             },
             {
                 "table_name": "rex_mailer_profile",
-                "prio": 13,
+                "prio": 14,
                 "type_id": "value",
                 "type_name": "choice",
                 "db_type": "text",
@@ -246,7 +261,7 @@
             },
             {
                 "table_name": "rex_mailer_profile",
-                "prio": 14,
+                "prio": 15,
                 "type_id": "value",
                 "type_name": "choice",
                 "db_type": "text",
@@ -271,7 +286,7 @@
             },
             {
                 "table_name": "rex_mailer_profile",
-                "prio": 15,
+                "prio": 16,
                 "type_id": "value",
                 "type_name": "choice",
                 "db_type": "text",
@@ -296,7 +311,7 @@
             },
             {
                 "table_name": "rex_mailer_profile",
-                "prio": 16,
+                "prio": 17,
                 "type_id": "value",
                 "type_name": "text",
                 "db_type": "varchar(191)",
@@ -314,7 +329,7 @@
             },
             {
                 "table_name": "rex_mailer_profile",
-                "prio": 17,
+                "prio": 18,
                 "type_id": "value",
                 "type_name": "text",
                 "db_type": "varchar(191)",
@@ -332,7 +347,7 @@
             },
             {
                 "table_name": "rex_mailer_profile",
-                "prio": 18,
+                "prio": 19,
                 "type_id": "value",
                 "type_name": "fieldset",
                 "db_type": "none",
@@ -346,7 +361,7 @@
             },
             {
                 "table_name": "rex_mailer_profile",
-                "prio": 19,
+                "prio": 20,
                 "type_id": "value",
                 "type_name": "html",
                 "db_type": "none",
@@ -359,7 +374,7 @@
             },
             {
                 "table_name": "rex_mailer_profile",
-                "prio": 20,
+                "prio": 21,
                 "type_id": "value",
                 "type_name": "fieldset",
                 "db_type": "none",
@@ -373,7 +388,7 @@
             },
             {
                 "table_name": "rex_mailer_profile",
-                "prio": 21,
+                "prio": 22,
                 "type_id": "value",
                 "type_name": "text",
                 "db_type": "varchar(191)",
@@ -391,7 +406,7 @@
             },
             {
                 "table_name": "rex_mailer_profile",
-                "prio": 22,
+                "prio": 23,
                 "type_id": "value",
                 "type_name": "number",
                 "db_type": "",
@@ -411,7 +426,7 @@
             },
             {
                 "table_name": "rex_mailer_profile",
-                "prio": 23,
+                "prio": 24,
                 "type_id": "value",
                 "type_name": "choice",
                 "db_type": "text",
@@ -436,7 +451,7 @@
             },
             {
                 "table_name": "rex_mailer_profile",
-                "prio": 24,
+                "prio": 25,
                 "type_id": "value",
                 "type_name": "choice",
                 "db_type": "text",
@@ -461,7 +476,7 @@
             },
             {
                 "table_name": "rex_mailer_profile",
-                "prio": 25,
+                "prio": 26,
                 "type_id": "value",
                 "type_name": "choice",
                 "db_type": "text",
@@ -486,7 +501,7 @@
             },
             {
                 "table_name": "rex_mailer_profile",
-                "prio": 26,
+                "prio": 27,
                 "type_id": "value",
                 "type_name": "choice",
                 "db_type": "text",
@@ -511,7 +526,7 @@
             },
             {
                 "table_name": "rex_mailer_profile",
-                "prio": 27,
+                "prio": 28,
                 "type_id": "value",
                 "type_name": "choice",
                 "db_type": "text",
@@ -536,7 +551,7 @@
             },
             {
                 "table_name": "rex_mailer_profile",
-                "prio": 28,
+                "prio": 29,
                 "type_id": "value",
                 "type_name": "fieldset",
                 "db_type": "none",
@@ -550,7 +565,7 @@
             },
             {
                 "table_name": "rex_mailer_profile",
-                "prio": 29,
+                "prio": 30,
                 "type_id": "value",
                 "type_name": "html",
                 "db_type": "none",
@@ -563,7 +578,7 @@
             },
             {
                 "table_name": "rex_mailer_profile",
-                "prio": 30,
+                "prio": 31,
                 "type_id": "value",
                 "type_name": "be_table",
                 "db_type": "text",
