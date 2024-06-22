@@ -28,24 +28,23 @@ rex_extension::register('YFORM_DATA_LIST', static function ($ep) {
                     if ($a['list']->getValue('smtp_debug') > 0) {
                         $return .= '<tr><th>Debugging:</th><td><i class="fas fa-exclamation-triangle text-danger"></i> aktiviert</td></tr>';
                     }
-                    $return .= '<tr><th>'.rex_i18n::msg('phpmailer_host').'</th><td>' . $a['list']->getValue('host') . ':' . $a['list']->getValue('port') . '</td></tr>';
-                    
-                    if ($a['list']->getValue('security_mode') == 0) {
-                        $return .= '<tr><th>'.rex_i18n::msg('phpmailer_security_mode').'</th><td>' . rex_i18n::msg('phpmailer_security_mode_manual')  . '</td></tr>';
+                    $return .= '<tr><th>' . rex_i18n::msg('phpmailer_host') . '</th><td>' . $a['list']->getValue('host') . ':' . $a['list']->getValue('port') . '</td></tr>';
+
+                    if (0 == $a['list']->getValue('security_mode')) {
+                        $return .= '<tr><th>' . rex_i18n::msg('phpmailer_security_mode') . '</th><td>' . rex_i18n::msg('phpmailer_security_mode_manual') . '</td></tr>';
                     } else {
-                        $return .= '<tr><th>'.rex_i18n::msg('phpmailer_security_mode').'</th><td>' . rex_i18n::msg('phpmailer_security_mode_auto') . '</td></tr>';
+                        $return .= '<tr><th>' . rex_i18n::msg('phpmailer_security_mode') . '</th><td>' . rex_i18n::msg('phpmailer_security_mode_auto') . '</td></tr>';
                     }
 
-                    $return .= '<tr><th>'.rex_i18n::msg('phpmailer_smtp_secure').'</th><td>' . $a['list']->getValue('smtpsecure') . '</td></tr>';
+                    $return .= '<tr><th>' . rex_i18n::msg('phpmailer_smtp_secure') . '</th><td>' . $a['list']->getValue('smtpsecure') . '</td></tr>';
 
-
-                    if ($a['list']->getValue('smtpauth') == 0) {
-                        $return .= '<tr><th>'.rex_i18n::msg('phpmailer_smtp_auth').'</th><td>' . rex_i18n::msg('phpmailer_disabled')  . '</td></tr>';
+                    if (0 == $a['list']->getValue('smtpauth')) {
+                        $return .= '<tr><th>' . rex_i18n::msg('phpmailer_smtp_auth') . '</th><td>' . rex_i18n::msg('phpmailer_disabled') . '</td></tr>';
                     } else {
-                        $return .= '<tr><th>'.rex_i18n::msg('phpmailer_smtp_auth').'</th><td>' . rex_i18n::msg('phpmailer_enabled') . '</td></tr>';
+                        $return .= '<tr><th>' . rex_i18n::msg('phpmailer_smtp_auth') . '</th><td>' . rex_i18n::msg('phpmailer_enabled') . '</td></tr>';
                     }
 
-                    $return .= '<tr><th>'.rex_i18n::msg('phpmailer_smtp_username').'</th><td>' . $a['list']->getValue('username') . '</td></tr>';
+                    $return .= '<tr><th>' . rex_i18n::msg('phpmailer_smtp_username') . '</th><td>' . $a['list']->getValue('username') . '</td></tr>';
                     $return .= '</table>';
                 } else {
                     $return .= '<span class="badge badge-primary">' . $mailer . '</span>';
@@ -72,11 +71,11 @@ rex_extension::register('YFORM_DATA_LIST', static function ($ep) {
             static function ($a) {
                 // fromname, form und Lesebestätigungsoption sowie bcc in einer Tabelle ausgeben
                 $return = '<table class="table table-sm table-borderless text-nowrap">';
-                $return .= '<tr><th>'.rex_i18n::msg('phpmailer_sender_name').'</th><td>' . $a['list']->getValue('fromname') . '</td></tr>';
-                $return .= '<tr><th>'.rex_i18n::msg('phpmailer_sender_email').'</th><td>' . $a['list']->getValue('from') . '</td></tr>';
-                $return .= '<tr><th>'.rex_i18n::msg('phpmailer_confirm').'</th><td>' . ($a['list']->getValue('confirmto') ? '<i class="fas fa-times text-danger"></i> ' . $a['list']->getValue('confirmto') : '') . '</td></tr>';
-                $return .= '<tr><th>'.rex_i18n::msg('phpmailer_bcc').'</th><td>' . ($a['list']->getValue('bcc') ? '<i class="fas fa-times text-danger"></i> ' . $a['list']->getValue('bcc') : '') . '</td></tr>';
-                $return .= '<tr><th>'.rex_i18n::msg('mailer_profile_returnto_email').'</th><td>' . ($a['list']->getValue('returnto') ? '<i class="fas fa-times text-danger"></i> ' . $a['list']->getValue('returnto') : '') . '</td></tr>';
+                $return .= '<tr><th>' . rex_i18n::msg('phpmailer_sender_name') . '</th><td>' . $a['list']->getValue('fromname') . '</td></tr>';
+                $return .= '<tr><th>' . rex_i18n::msg('phpmailer_sender_email') . '</th><td>' . $a['list']->getValue('from') . '</td></tr>';
+                $return .= '<tr><th>' . rex_i18n::msg('phpmailer_confirm') . '</th><td>' . ($a['list']->getValue('confirmto') ? '<i class="fas fa-times text-danger"></i> ' . $a['list']->getValue('confirmto') : '') . '</td></tr>';
+                $return .= '<tr><th>' . rex_i18n::msg('phpmailer_bcc') . '</th><td>' . ($a['list']->getValue('bcc') ? '<i class="fas fa-times text-danger"></i> ' . $a['list']->getValue('bcc') : '') . '</td></tr>';
+                $return .= '<tr><th>' . rex_i18n::msg('mailer_profile_returnto_email') . '</th><td>' . ($a['list']->getValue('returnto') ? '<i class="fas fa-times text-danger"></i> ' . $a['list']->getValue('returnto') : '') . '</td></tr>';
                 $return .= '</table>';
                 return $return;
             },
@@ -95,8 +94,8 @@ rex_extension::register('YFORM_DATA_LIST', static function ($ep) {
             'custom',
             static function ($a) {
                 $return = '<table class="table table-sm table-borderless text-nowrap">';
-                $return .= '<tr><th>'.rex_i18n::msg('phpmailer_logging').'</th><td>' . ($a['list']->getValue('logging') ? '<i class="fas fa-check text-success"></i>' : '<i class="fas fa-times text-danger"></i>') . '</td></tr>';
-                $return .= '<tr><th>'.rex_i18n::msg('phpmailer_archive').'</th><td>' . ($a['list']->getValue('archive') ? '<i class="fas fa-check text-success"></i>' : '<i class="fas fa-times text-danger"></i>') . '</td></tr>';
+                $return .= '<tr><th>' . rex_i18n::msg('phpmailer_logging') . '</th><td>' . ($a['list']->getValue('logging') ? '<i class="fas fa-check text-success"></i>' : '<i class="fas fa-times text-danger"></i>') . '</td></tr>';
+                $return .= '<tr><th>' . rex_i18n::msg('phpmailer_archive') . '</th><td>' . ($a['list']->getValue('archive') ? '<i class="fas fa-check text-success"></i>' : '<i class="fas fa-times text-danger"></i>') . '</td></tr>';
                 $return .= '</table>';
 
                 $headers = json_decode($a['list']->getValue('header'), true);
