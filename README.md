@@ -2,6 +2,8 @@
 
 Erweitert das Core-Addon `phpmailer` um die Möglichkeit, unterschiedliche Absende-Profile und Postfächer-Konfigurationen vorzunehmen. 
 
+![image](https://github.com/alexplusde/mailer_profile/assets/3855487/5fc79c3d-ef02-4e06-bf40-377287f2e3d6)
+
 ## Features
 
 * Lege unterschiedliche Absendeprofile, z.B. mit unterschiedlichen Absendeadressen, Absendenamen und SMTP-Zugangsdaten an.
