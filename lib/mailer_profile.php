@@ -41,7 +41,7 @@ class mailer_profile extends rex_yform_manager_dataset
 
     /* Absendername */
     /** @api */
-    public function getFromname(): ?string
+    public function getFromName(): ?string
     {
         return $this->getValue('fromname');
     }
@@ -69,7 +69,7 @@ class mailer_profile extends rex_yform_manager_dataset
 
     /* Lesebestätigung an */
     /** @api */
-    public function getConfirmto(): ?string
+    public function getConfirmReadingTo(): ?string
     {
         return $this->getValue('confirmto');
     }
@@ -139,7 +139,7 @@ class mailer_profile extends rex_yform_manager_dataset
 
     /* Verschlüsselung */
     /** @api */
-    public function getSecurityMode(): ?string
+    public function getSMTPAutoTLS(): ?string
     {
         return $this->getValue('security_mode');
     }
@@ -269,7 +269,7 @@ class mailer_profile extends rex_yform_manager_dataset
 
     /* Debug */
     /** @api */
-    public function getSmtpDebug(): ?string
+    public function getSMTPDebug(): ?string
     {
         return $this->getValue('smtp_debug');
     }
