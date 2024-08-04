@@ -14,6 +14,8 @@ requires:
 
 page:
     hidden: true
+    title: translate:mailer_profile_title
+
 
 pages:
     phpmailer/profile:
@@ -23,5 +25,5 @@ pages:
         title: translate:mailer_profile_docs
         subPath: README.md 
         icon: rex-icon fa-info-circle
-        itemclass: pull-right
+        itemClass: pull-right
         perm: mailer_profile[docs]
