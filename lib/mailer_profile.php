@@ -5,7 +5,9 @@ class mailer_profile extends rex_yform_manager_dataset
     public static function setProfile(rex_extension_point $ep): void
     {
         $mailer = $ep->getSubject();
+        /* @var rex_mailer $mailer */
         $profile = rex_addon::get('mailer_profile')->getConfig('current');
+        /* @var mailer_profile $profile */
 
         if ($profile) {
             // $mailer->Timeout = $profile->getTimeout();
@@ -18,10 +20,10 @@ class mailer_profile extends rex_yform_manager_dataset
             if ('smtp' == $profile->getMailer() && $mailer->Username = $profile->getUsername()) {
                 $mailer->Host = $profile->getHost();
                 $mailer->Port = $profile->getPort();
-                $mailer->SMTPDebug = $profile->getSMTPDebug();
-                $mailer->SMTPSecure = $profile->getSMTPSecure();
-                $mailer->SMTPAuth = $profile->getSMTPAuth();
-                $mailer->SMTPAutoTLS = $profile->getSMTPAutoTLS();
+                $mailer->SMTPDebug = $profile->getSmtpDebug();
+                $mailer->SMTPSecure = $profile->getSmtpSecure();
+                $mailer->SMTPAuth = $profile->getSmtpAuth();
+                $mailer->SMTPAutoTLS = $profile->getSmtpAutoTls();
                 $mailer->Username = $profile->getUsername();
                 $mailer->Password = $profile->getPassword();
             }
@@ -139,7 +141,7 @@ class mailer_profile extends rex_yform_manager_dataset
 
     /* Verschlüsselung */
     /** @api */
-    public function getSMTPAutoTLS(): ?string
+    public function getSmtpAutoTls(): ?string
     {
         return $this->getValue('security_mode');
     }
@@ -171,13 +173,13 @@ class mailer_profile extends rex_yform_manager_dataset
 
     /* Authentifizierung */
     /** @api */
-    public function getSmtpauth(): ?string
+    public function getSmtpAuth(): ?string
     {
         return $this->getValue('smtpauth');
     }
 
     /** @api */
-    public function setSmtpauth(mixed $value): self
+    public function setSmtpAuth(mixed $value): self
     {
         $this->setValue('smtpauth', $value);
         return $this;
@@ -269,7 +271,7 @@ class mailer_profile extends rex_yform_manager_dataset
 
     /* Debug */
     /** @api */
-    public function getSMTPDebug(): ?string
+    public function getSmtpDebug(): ?string
     {
         return $this->getValue('smtp_debug');
     }
