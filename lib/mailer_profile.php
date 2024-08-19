@@ -5,7 +5,9 @@ class mailer_profile extends rex_yform_manager_dataset
     public static function setProfile(rex_extension_point $ep): void
     {
         $mailer = $ep->getSubject();
+        /* @var rex_mailer $mailer */
         $profile = rex_addon::get('mailer_profile')->getConfig('current');
+        /* @var mailer_profile $profile */
 
         if ($profile) {
             // $mailer->Timeout = $profile->getTimeout();
@@ -18,10 +20,10 @@ class mailer_profile extends rex_yform_manager_dataset
             if ('smtp' == $profile->getMailer() && $mailer->Username = $profile->getUsername()) {
                 $mailer->Host = $profile->getHost();
                 $mailer->Port = $profile->getPort();
-                $mailer->SMTPDebug = $profile->getSMTPDebug();
-                $mailer->SMTPSecure = $profile->getSMTPSecure();
-                $mailer->SMTPAuth = $profile->getSMTPAuth();
-                $mailer->SMTPAutoTLS = $profile->getSMTPAutoTLS();
+                $mailer->SMTPDebug = $profile->getSmtpDebug();
+                $mailer->SMTPSecure = $profile->getSmtpSecure();
+                $mailer->SMTPAuth = $profile->getSmtpAuth();
+                $mailer->SMTPAutoTLS = $profile->getSmtpAutoTls();
                 $mailer->Username = $profile->getUsername();
                 $mailer->Password = $profile->getPassword();
             }
@@ -41,13 +43,13 @@ class mailer_profile extends rex_yform_manager_dataset
 
     /* Absendername */
     /** @api */
-    public function getFromname(): ?string
+    public function getFromName(): ?string
     {
         return $this->getValue('fromname');
     }
 
     /** @api */
-    public function setFromname(mixed $value): self
+    public function setFromName(mixed $value): self
     {
         $this->setValue('fromname', $value);
         return $this;
@@ -69,13 +71,13 @@ class mailer_profile extends rex_yform_manager_dataset
 
     /* Lesebestätigung an */
     /** @api */
-    public function getConfirmto(): ?string
+    public function getConfirmReadingTo(): ?string
     {
         return $this->getValue('confirmto');
     }
 
     /** @api */
-    public function setConfirmto(mixed $value): self
+    public function setConfirmReadingTo(mixed $value): self
     {
         $this->setValue('confirmto', $value);
         return $this;
@@ -139,9 +141,15 @@ class mailer_profile extends rex_yform_manager_dataset
 
     /* Verschlüsselung */
     /** @api */
-    public function getSecurityMode(): ?string
+    public function getSmtpAutoTls(): ?string
     {
         return $this->getValue('security_mode');
+    }
+
+    public function setSmtpAutoTls(mixed $value): self
+    {
+        $this->setValue('security_mode', $value);
+        return $this;
     }
 
     public function getReturnto(): string
@@ -149,11 +157,6 @@ class mailer_profile extends rex_yform_manager_dataset
         return $this->getValue('returnto');
     }
 
-    public function setSecurityMode(mixed $value): self
-    {
-        $this->setValue('security_mode', $value);
-        return $this;
-    }
 
     /* Verschlüsselungstyp */
     /** @api */
@@ -171,13 +174,13 @@ class mailer_profile extends rex_yform_manager_dataset
 
     /* Authentifizierung */
     /** @api */
-    public function getSmtpauth(): ?string
+    public function getSmtpAuth(): ?string
     {
         return $this->getValue('smtpauth');
     }
 
     /** @api */
-    public function setSmtpauth(mixed $value): self
+    public function setSmtpAuth(mixed $value): self
     {
         $this->setValue('smtpauth', $value);
         return $this;
