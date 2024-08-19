@@ -21,7 +21,10 @@ pages:
     phpmailer/profile:
         title: translate:mailer_profile_title
         perm: mailer_profile[]
-    docs:
+    phpmailer/profile/profile:
+        title: translate:mailer_profile_title
+        perm: mailer_profile[]
+    phpmailer/profile/docs:
         title: translate:mailer_profile_docs
         subPath: README.md 
         icon: rex-icon fa-info-circle

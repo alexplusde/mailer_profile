@@ -3,7 +3,7 @@ mailer_profile_table_name_label = Profilname
 mailer_profile_returnto_email = Bounces (Return-Path) an
 
 mailer_profile_table = 📬 Mailer-Profile
-
+mailer_profile_docs = Docs
 # Die meisten Übersetzungen kommen direkt vom PHPMailer-Addon
 
 mailer_profile_header = Zusätzliche (X-)Header
