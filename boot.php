@@ -77,19 +77,17 @@ rex_extension::register('YFORM_DATA_LIST', static function ($ep) {
                 $return .= '<tr><th>' . rex_i18n::msg('phpmailer_bcc') . '</th><td>' . ($a['list']->getValue('bcc') ? '<i class="fas fa-times text-danger"></i> ' . $a['list']->getValue('bcc') : '') . '</td></tr>';
                 $return .= '<tr><th>' . rex_i18n::msg('mailer_profile_returnto_email') . '</th><td>' . ($a['list']->getValue('returnto') ? '<i class="fas fa-times text-danger"></i> ' . $a['list']->getValue('returnto') : '') . '</td></tr>';
 
-                $action = 'action|mailer_profile|'.$a['list']->getValue('id').'';
+                $action = 'action|mailer_profile|' . $a['list']->getValue('id') . '';
                 $return .= '<tr><td colspan="2">';
-                $return .= '<clipboard-copy for="action-pipe-'.$a['list']->getValue('id').'" class="btn btn-copy btn-text"><i class="rex-icon fa-clone"></i> <code>'.$action.'</code></clipboard-copy>';
-                $return .= '<div class="hidden" id="action-pipe-'.$a['list']->getValue('id').'"><code>'.$action.'</code></div>';
+                $return .= '<clipboard-copy for="action-pipe-' . $a['list']->getValue('id') . '" class="btn btn-copy btn-text"><i class="rex-icon fa-clone"></i> <code>' . $action . '</code></clipboard-copy>';
+                $return .= '<div class="hidden" id="action-pipe-' . $a['list']->getValue('id') . '"><code>' . $action . '</code></div>';
                 $return .= '</th></tr>';
 
-                $action = '$yform->setAction(\'mailer_profile\', array('.$a['list']->getValue('id').');';
+                $action = '$yform->setAction(\'mailer_profile\', array(' . $a['list']->getValue('id') . ');';
                 $return .= '<tr><td colspan="2">';
-                $return .= '<clipboard-copy for="action-php-'.$a['list']->getValue('id').'" class="btn btn-copy btn-text"><i class="rex-icon fa-clone"></i> <code>'.$action.'</code></clipboard-copy>';
-                $return .= '<div class="hidden" id="action-php-'.$a['list']->getValue('id').'"><code>'.$action.'</code></div>';
+                $return .= '<clipboard-copy for="action-php-' . $a['list']->getValue('id') . '" class="btn btn-copy btn-text"><i class="rex-icon fa-clone"></i> <code>' . $action . '</code></clipboard-copy>';
+                $return .= '<div class="hidden" id="action-php-' . $a['list']->getValue('id') . '"><code>' . $action . '</code></div>';
                 $return .= '</th></tr>';
-        
-
 
                 $return .= '</table>';
                 return $return;
@@ -113,7 +111,6 @@ rex_extension::register('YFORM_DATA_LIST', static function ($ep) {
                 $return .= '<tr><th>' . rex_i18n::msg('phpmailer_archive') . '</th><td>' . ($a['list']->getValue('archive') ? '<i class="fas fa-check text-success"></i>' : '<i class="fas fa-times text-danger"></i>') . '</td></tr>';
                 $return .= '</table>';
 
-                
                 $headers = json_decode($a['list']->getValue('header'), true);
                 if (!is_array($headers)) {
                     return $return;
@@ -132,8 +129,6 @@ rex_extension::register('YFORM_DATA_LIST', static function ($ep) {
         $list->removeColumn('archive');
     }
 });
-
-
 
 /*
 /* Darstellung im Backend der Datalist ändern */
