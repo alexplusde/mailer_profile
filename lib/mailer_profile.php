@@ -5,9 +5,9 @@ class mailer_profile extends rex_yform_manager_dataset
     public static function setProfile(rex_extension_point $ep): void
     {
         $mailer = $ep->getSubject();
-        /* @var rex_mailer $mailer */
+        /** @var rex_mailer $mailer */
         $profile = rex_addon::get('mailer_profile')->getConfig('current');
-        /* @var mailer_profile $profile */
+        /** @var mailer_profile $profile */
 
         if ($profile) {
             // $mailer->Timeout = $profile->getTimeout();
@@ -156,7 +156,6 @@ class mailer_profile extends rex_yform_manager_dataset
     {
         return $this->getValue('returnto');
     }
-
 
     /* Verschlüsselungstyp */
     /** @api */
