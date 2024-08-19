@@ -49,7 +49,7 @@ class mailer_profile extends rex_yform_manager_dataset
     }
 
     /** @api */
-    public function setFromname(mixed $value): self
+    public function setFromName(mixed $value): self
     {
         $this->setValue('fromname', $value);
         return $this;
@@ -77,7 +77,7 @@ class mailer_profile extends rex_yform_manager_dataset
     }
 
     /** @api */
-    public function setConfirmto(mixed $value): self
+    public function setConfirmReadingTo(mixed $value): self
     {
         $this->setValue('confirmto', $value);
         return $this;
@@ -146,16 +146,17 @@ class mailer_profile extends rex_yform_manager_dataset
         return $this->getValue('security_mode');
     }
 
+    public function setSmtpAutoTls(mixed $value): self
+    {
+        $this->setValue('security_mode', $value);
+        return $this;
+    }
+
     public function getReturnto(): string
     {
         return $this->getValue('returnto');
     }
 
-    public function setSecurityMode(mixed $value): self
-    {
-        $this->setValue('security_mode', $value);
-        return $this;
-    }
 
     /* Verschlüsselungstyp */
     /** @api */
