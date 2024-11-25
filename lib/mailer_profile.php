@@ -28,8 +28,8 @@ class mailer_profile extends rex_yform_manager_dataset
                 $mailer->Password = $profile->getPassword();
             }
             if ($profile->getHeader()) {
-                foreach ($profile->getHeader() as $key => $value) {
-                    $mailer->addCustomHeader($key, $value);
+                foreach ($profile->getHeader() as $header) {
+                    $mailer->addCustomHeader($header[0], $header[1]);
                 }
             }
             $mailer->CharSet = $profile->getCharset();
@@ -37,7 +37,6 @@ class mailer_profile extends rex_yform_manager_dataset
             $mailer->Encoding = $profile->getEncoding();
             $mailer->Priority = $profile->getPriority();
             // $mailer->archive = $profile->getArchive();
-            // dump($mailer);
         }
     }
 
