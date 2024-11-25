@@ -83,7 +83,7 @@ rex_extension::register('YFORM_DATA_LIST', static function ($ep) {
                 $return .= '<div class="hidden" id="action-pipe-' . $a['list']->getValue('id') . '"><code>' . $action . '</code></div>';
                 $return .= '</th></tr>';
 
-                $action = '$yform->setAction(\'mailer_profile\', array(' . $a['list']->getValue('id') . '));';
+                $action = '$yform->setActionField(\'mailer_profile\', array(' . $a['list']->getValue('id') . '));';
                 $return .= '<tr><td colspan="2">';
                 $return .= '<clipboard-copy for="action-php-' . $a['list']->getValue('id') . '" class="btn btn-copy btn-text"><i class="rex-icon fa-clone"></i> <code>' . $action . '</code></clipboard-copy>';
                 $return .= '<div class="hidden" id="action-php-' . $a['list']->getValue('id') . '"><code>' . $action . '</code></div>';
